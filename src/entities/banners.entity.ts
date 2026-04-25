@@ -10,32 +10,32 @@ export class Banners extends AbstractEntity {
 
     @Column("integer", { name: "seq", primary: false, nullable: true })
     seq: number;
-    
-    @Column("character varying", { name: "er_title", primary: false, nullable: true })
+
+    @Column("varchar", { name: "er_title", primary: false, nullable: true, length: 255 })
     erTitle: string;
-    
-    @Column("character varying", { name: "ar_title", primary: false, nullable: true })
+
+    @Column("varchar", { name: "ar_title", primary: false, nullable: true, length: 255 })
     arTitle: string;
-    
+
     @Column("text", { name: "er_content", primary: false, nullable: true })
     erContent: string;
-    
+
     @Column("text", { name: "ar_content", primary: false, nullable: true })
     arContent: string;
 
-    @Column("character varying", { name: "path", primary: false, nullable: true })
+    @Column("varchar", { name: "path", primary: false, nullable: true, length: 255 })
     path: string;
 
-    @Column("boolean", { name: "is_active", primary: false, default: true })
-    isActive: boolean;
+    @Column("tinyint", { name: "is_active", default: 1 })
+    isActive: number;
 
-    @Column("timestamp without time zone", { name: "created_on", nullable: true })
+    @Column("timestamp", { name: "created_on", nullable: true })
     createdOn?: Date;
 
-    @Column("timestamp without time zone", { name: "modified_on", nullable: true })
+    @Column("timestamp", { name: "modified_on", nullable: true })
     modifiedOn?: Date;
 
-    @Column("jsonb", { name: "additional_info", nullable: true })
+    @Column("json", { name: "additional_info", nullable: true })
     additionalInfo?: JSON;
 
     @ManyToOne(() => Header, (header) => header.banners)

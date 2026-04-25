@@ -7,16 +7,16 @@ export class User extends AbstractEntity {
     @Column({ name: "id", primary: true, nullable: false })
     id: string;
 
-    @Column("character varying", { name: "first_name", primary: false, nullable: false })
+    @Column("varchar", { name: "first_name", primary: false, nullable: false, length: 255 })
     firstName: string;
     
-    @Column("character varying", { name: "last_name", primary: false, nullable: false })
+    @Column("varchar", { name: "last_name", primary: false, nullable: false, length: 255 })
     lastName: string;
 
-    @Column("character varying", { name: "email", primary: false, nullable: false })
+    @Column("varchar", { name: "email", primary: false, nullable: false, length: 255 })
     email: string;
 
-    @Column("character varying", { name: "password", primary: false, nullable: false })
+    @Column("varchar", { name: "password", primary: false, nullable: false, length: 255 })
     password: string;
 
     @Column("boolean", { name: "is_active", primary: false, default: true })

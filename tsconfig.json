@@ -2,11 +2,13 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2020",
+        "skipLibCheck": true,
         "noImplicitAny": false,
         "moduleResolution": "node",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "strictPropertyInitialization": false,
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {

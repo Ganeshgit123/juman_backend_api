@@ -10,27 +10,30 @@ export class Footer extends AbstractEntity {
     @Column("text", { name: "address", primary: false, nullable: true })
     address: string;
 
-    @Column("character varying", { name: "mobile_number", primary: false, nullable: false })
+    @Column("varchar", { name: "name", primary: false, nullable: false, length: 255 })
+    name: string;
+
+    @Column("varchar", { name: "mobile_number", primary: false, nullable: false, length: 255 })
     mobileNumber: string;
-    
-    @Column("character varying", { name: "email", primary: false, nullable: false })
+
+    @Column("varchar", { name: "email", primary: false, nullable: false, length: 255 })
     email: string;
 
-    @Column("character varying", { name: "copyright", primary: false, nullable: true })
-    copyright: string;    
+    @Column("varchar", { name: "copyright", primary: false, nullable: true, length: 255 })
+    copyright: string;
 
-    @Column("character varying", { name: "fb_link", primary: false })
+    @Column("varchar", { name: "fb_link", primary: false, length: 255 })
     fbLink: boolean;
-    
-    @Column("character varying", { name: "insta_link", primary: false })
+
+    @Column("varchar", { name: "insta_link", primary: false, length: 255 })
     instaLink: boolean;
-    
-    @Column("character varying", { name: "twitter_link", primary: false })
+
+    @Column("varchar", { name: "twitter_link", primary: false, length: 255 })
     twitterLink: boolean;
-    
-    @Column("jsonb", { name: "quick_link", primary: false })
+
+    @Column({ type: 'json', nullable: true })
     quickLink: JSON;
 
-    @Column("timestamp without time zone", { name: "created_on", nullable: true })
+    @Column("timestamp", { name: "created_on", nullable: true })
     createdOn?: Date;
 }

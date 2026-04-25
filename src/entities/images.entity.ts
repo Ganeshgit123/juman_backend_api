@@ -12,16 +12,16 @@ export class Images extends AbstractEntity {
     @Column("integer", { name: "seq", primary: false, nullable: true })
     seq: number;
 
-    @Column("character varying", { name: "path", primary: false, nullable: true })
+    @Column("varchar", { name: "path", primary: false, nullable: true, length: 255 })
     path: string;
 
     @Column("boolean", { name: "is_active", primary: false, default: true })
     isActive: boolean;
 
-    @Column("timestamp without time zone", { name: "created_on", nullable: true })
+    @Column("timestamp", { name: "created_on", nullable: true })
     createdOn?: Date;
 
-    @Column("timestamp without time zone", { name: "modified_on", nullable: true })
+    @Column("timestamp", { name: "modified_on", nullable: true })
     modifiedOn?: Date;
 
     @ManyToOne(() => Sections, (section) => section.images)

@@ -7,21 +7,21 @@ export class Contacts extends AbstractEntity {
     @Column({ name: "id", primary: true, nullable: false })
     id: string;
 
-    @Column("character varying", { name: "name", primary: false, nullable: false })
+    @Column("varchar", { name: "name", primary: false, nullable: false, length: 255 })
     name: string;
 
-    @Column("character varying", { name: "mobile_number", primary: false, nullable: false })
+    @Column("varchar", { name: "mobile_number", primary: false, nullable: false, length: 255 })
     mobileNumber: string;
-    
-    @Column("character varying", { name: "email", primary: false, nullable: false })
+
+    @Column("varchar", { name: "email", primary: false, nullable: false, length: 255 })
     email: string;
 
     @Column("text", { name: "message", primary: false, nullable: true })
-    message: string;    
+    message: string;
 
     @Column("boolean", { name: "is_active", primary: false, default: true })
     isActive: boolean;
 
-    @Column("timestamp without time zone", { name: "created_on", nullable: true })
+    @Column("timestamp", { name: "created_on", nullable: true })
     createdOn?: Date;
 }

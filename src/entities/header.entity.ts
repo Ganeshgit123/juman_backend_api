@@ -11,23 +11,23 @@ export class Header extends AbstractEntity {
 
     @Column("integer", { name: "seq", primary: false, nullable: false })
     seq: number;
-    
-    @Column("character varying", { name: "name", primary: false, nullable: true })
+
+    @Column("varchar", { name: "name", primary: false, nullable: true, length: 255 })
     name: string;
 
-    @Column("character varying", { name: "en_menu", primary: false, nullable: false })
+    @Column("varchar", { name: "en_menu", primary: false, nullable: false, length: 255 })
     enMenu: string;
-    
-    @Column("character varying", { name: "ar_menu", primary: false, nullable: false })
+
+    @Column("varchar", { name: "ar_menu", primary: false, nullable: false, length: 255 })
     arMenu: string;
 
     @Column("boolean", { name: "is_active", primary: false, default: true })
     isActive: boolean;
 
-    @Column("timestamp without time zone", { name: "created_on", nullable: true })
+    @Column("timestamp", { name: "created_on", nullable: true })
     createdOn?: Date;
 
-    @Column("timestamp without time zone", { name: "modified_on", nullable: true })
+    @Column("timestamp", { name: "modified_on", nullable: true })
     modifiedOn?: Date;
 
     @OneToMany(() => Banners, (banner) => banner.header)
